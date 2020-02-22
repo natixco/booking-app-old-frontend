@@ -1,0 +1,89 @@
+@import '../../../../../assets/_import.sass'
+
+.container
+  position: relative
+  top: 0
+  left: 0
+  width: 100vw
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  background-size: cover
+  animation: none
+
+  .background
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 400px
+    // background: linear-gradient(35deg,#003599,#005BCC)
+    // background: linear-gradient(90deg,#003572,$accentColor1)
+    background: linear-gradient(90deg,#003599,$accentColor1)
+
+  .title
+    display: block
+    position: relative
+    font-size: 40px
+    font-weight: 700
+    color: white
+    z-index: 999
+    text-align: center
+    margin-top: 50px
+    text-decoration: none
+
+  form
+    margin-top: 80px
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    background: white
+    padding: 50px
+    width: max-content
+    height: auto
+    box-shadow: 0 4px 32px rgba($gray, .15)
+    animation: slideup .4s ease
+
+    .subtitle
+      font-size: 32px
+      font-weight: 700
+      color: $black
+      text-align: center
+      margin-bottom: 50px
+
+    .btn
+      position: relative
+      box-shadow: rgba($accentColor1, .15) 0px 12px 14px 0px
+      width: 350px
+
+    .info2
+      width: 300px
+      margin-top: 20px
+
+  .info
+    width: 350px
+    margin-top: 20px
+    margin-bottom: 10px
+
+  p
+    font-size: 15px
+    color: $gray
+    white-space: nowrap
+    position: relative
+    left: 50%
+    transform: translateX(-50%)
+    display: inline-block
+    &:nth-of-type(1)
+      margin-bottom: 10px
+
+    a
+      color: $gray
+      font-weight: 700
+      text-decoration: none
+      cursor: pointer
+      &:hover
+        color: $accentColor1

@@ -1,0 +1,31 @@
+@import '../../../../../../assets/_import.sass'
+
+.btn
+  position: relative
+
+.plans
+  position: relative
+  width: 100%
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-template-rows: repeat(3, 100px)
+  grid-column-gap: 20px
+  grid-row-gap: 20px
+  justify-items: stretch
+  align-items: stretch
+
+  .plan
+    position: relative
+    list-style: none
+    height: 100px
+    display: flex
+    flex-direction: row
+    align-items: center
+    border-radius: 4px
+    margin-bottom: 30px
+    border: 1px solid rgba(0,0,0,.1)
+    cursor: pointer
+    &:hover
+      i, .title
+        color: $accentColor1 !important
+

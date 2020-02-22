@@ -1,0 +1,72 @@
+<nav>
+  <ul class="mainlinks">
+    <li class="title">
+      <a routerLink="/">Bookly</a>
+    </li>
+  </ul>
+  <div *ngIf="userInfo['user'] === undefined" class="buttons">
+    <div class="language-selector" (mouseover)="toggleLanguageSelector()" (mouseout)="toggleLanguageSelector()">
+      <div class="selected">
+        <img [src]="flagPath" alt="">
+        <i class="eva eva-chevron-down" [@rotateIcon]="langSelectorIsOpened"></i>
+      </div>
+      <div class="languages" [@toggleLanguageSelector]="langSelectorIsOpened">
+        <ul>
+          <li (click)="changeLanguage('en')" data-lang="en">
+            <img src="../../../../assets/flags/en.svg" alt="">
+            <p>English</p>
+          </li>
+          <li (click)="changeLanguage('nl')" data-lang="nl">
+            <img src="../../../../assets/flags/nl.svg" alt="">
+            <p>Nederlands</p>
+          </li>
+          <li (click)="changeLanguage('hu')" data-lang="hu">
+            <img src="../../../../assets/flags/hu.svg" alt="">
+            <p>Magyar</p>
+          </li>
+          <li (click)="changeLanguage('de')" data-lang="de">
+            <img src="../../../../assets/flags/de.svg" alt="">
+            <p>Deutsch</p>
+          </li>
+          <li (click)="changeLanguage('fr')" data-lang="fr">
+            <img src="../../../../assets/flags/fr.svg" alt="">
+            <p>Française</p>
+          </li>
+          <li (click)="changeLanguage('sv')" data-lang="se">
+            <img src="../../../../assets/flags/sv.svg" alt="">
+            <p>Svenska</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button
+      routerLink="/auth/signup"
+      class="btn btn-secondary--accent">
+      {{ 'AUTH.signup' | translate }}
+    </button>
+    <button
+      routerLink="/auth/login"
+      class="btn btn-primary--accent">
+      {{ 'AUTH.login' | translate }}
+    </button>
+  </div>
+  <div *ngIf="userInfo['user'] !== undefined" class="user-dropdown" (mouseover)="toggleUserDropdown()" (mouseout)="toggleUserDropdown()">
+    <div class="info">
+      <h1>{{userInfo['user']}}</h1>
+      <i class="eva eva-chevron-down" [@rotateIcon]="userDropdownIsOpened"></i>
+    </div>
+    <div class="dropdown" [@toggleDropdown]="userDropdownIsOpened">
+      <ul>
+        <li routerLink="/app/dashboard">
+          <p>{{ 'SIDEBAR.dashboard' | translate }}</p>
+        </li>
+        <li routerLink="/app/settings">
+          <p>{{ 'SIDEBAR.settings' | translate }}</p>
+        </li>
+        <li (click)="logout()">
+          <p>{{ 'AUTH.logout' | translate }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

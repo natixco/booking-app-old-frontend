@@ -1,0 +1,182 @@
+<div class="container">
+  <div class="status-bar">
+    <div class="inner-status-bar" [ngStyle]="{'width': barWidth + '%'}"></div>
+  </div>
+  <div class="inner-container">
+    <form [formGroup]="bookingForm">
+      <div class="box" id="box_1" *ngIf="currentBox === 0">
+        <h1 class="title">Select a service</h1>
+        <h2 class="subtitle">Lorem ipsum dolor sit amet</h2>
+        <div class="input-container">
+          <select formControlName="serviceID" (change)="loadService($event.target.value)">
+            <option value="" disabled selected>Select service</option>
+            <option [value]="item.ID" *ngFor="let item of services">{{item.title}}</option>
+          </select>
+        </div>
+        <div *ngIf="bookingForm.controls.serviceID.value !== ''">
+          <div class="selected-service-box">
+            <div class="info-inner-container">
+              <h1 class="infoTitle">Duration</h1>
+              <p class="infoSubtitle">{{selectedService['duration']}} minutes</p>
+            </div>
+            <div class="info-inner-container">
+              <h1 class="infoTitle">Description</h1>
+              <p class="infoSubtitle">{{selectedService['description']}}</p>
+            </div>
+            <div class="info-inner-container">
+              <h1 class="infoTitle">Price</h1>
+              <p class="infoSubtitle">{{selectedService['price']}}</p>
+            </div>
+          </div>
+          <div class="buttons">
+            <button 
+              value="Next"
+              class="btn btn-primary--accent"
+              style="min-width: 140px"
+              (click)="nextPage()"
+            >
+            Next
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="box" id="box_2" *ngIf="currentBox === 1">
+        <h1 class="title">Select your preferred date and time</h1>
+        <h2 class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, quo!</h2>
+        <div class="box-big-container">
+          <div class="box-inner-container">
+            <div class="inner-box">
+              <h1 class="boxTitle">Select date</h1>
+              <h1 class="boxSubtitle">Pick a date when you would like to be called</h1>
+              <app-calendar></app-calendar>
+            </div>
+            <div class="inner-box" *ngIf="objectkeys(selectedDate).length != 0">
+              <h1 class="boxTitle">Select time</h1>
+              <h1 class="boxSubtitle">Pick a time when you would like to be called</h1>
+              <div class="timepicker">
+                <div class="inner-timepicker">
+                  <p (click)="setTime(item, i)" *ngFor="let item of times; let i = index" [ngClass]="{'active': activeTime == i}">{{item}}</p>
+                  <p class="notime" *ngIf="times.length === 0">No available service on this day.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="buttons">
+            <button 
+              class="btn btn-primary--gray"
+              style="min-width: 140px"
+              (click)="prevPage()"
+            >
+            Back
+            </button>
+            <button 
+              class="btn btn-primary--accent"
+              style="min-width: 140px"
+              (click)="nextPage()"
+              [disabled]="form.date.value.length == 0 || form.time.value.length == 0"
+              [ngClass]="{'btn-disabled': form.date.value.length == 0 || form.time.value.length == 0}"
+            >
+            Next
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="box" id="box_3" *ngIf="currentBox === 2">
+        <h1 class="title">Please fill out your personal data</h1>
+        <h2 class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, quo!</h2>
+        <div class="inputs">
+          <div class="input-container">
+            <label for="name" [ngClass]="{'input-invalid': form.name.touched && form.name.errors}">
+              <span *ngIf="!form.name.errors || !form.name.touched">Name</span>
+              <span *ngIf="form.name.errors && form.name.touched">
+                <span *ngIf="form.name.errors.required">Name is required.</span>
+              </span>
+            </label>
+            <input type="text" name="name" formControlName="name" placeholder="Hank Voight">
+          </div>
+          <div class="input-container">
+            <label for="email" [ngClass]="{'input-invalid': form.email.touched && form.email.errors}">
+              <span *ngIf="!form.email.errors || !form.email.touched">Email</span>
+              <span *ngIf="form.email.errors && form.email.touched">
+                <span *ngIf="form.email.errors.required">Email is required.</span>
+                <span *ngIf="form.email.errors.email">Email has to be a valid email address.</span>
+              </span>
+            </label>
+            <input type="text" name="email" formControlName="email" placeholder="sergevoight@cpd.com">
+          </div>
+          <div class="input-container">
+            <label for="phone" [ngClass]="{'input-invalid': form.phone.touched && form.phone.errors}">
+              <span *ngIf="!form.phone.errors || !form.phone.touched">Phone number</span>
+              <span *ngIf="form.phone.errors && form.phone.touched">
+                <span *ngIf="form.phone.errors.required">Phone number is required.</span>
+              </span>
+            </label>
+            <input type="text" name="phone" formControlName="phone" placeholder="+565456465496846s">
+          </div>
+        </div>
+        <div class="buttons">
+          <button 
+            class="btn btn-primary--gray"
+            style="min-width: 140px"
+            (click)="prevPage()"
+          >
+          Back
+          </button>
+          <button 
+            class="btn btn-primary--accent"
+            style="min-width: 140px"
+            (click)="nextPage()"
+            [disabled]="form.name.value.length == 0 || form.email.value.length == 0 || form.phone.value.length == 0"
+            [ngClass]="{'btn-disabled': form.name.value.length == 0 || form.email.value.length == 0 || form.phone.value.length == 0}"
+          >
+          Next
+          </button>
+        </div>
+      </div>
+      <div class="box" id="box_4" *ngIf="currentBox === 3">
+        <h1 class="title">Summary</h1>
+        <h2 class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, quo!</h2>
+        <div class="info">
+          <div class="info-inner-container">
+            <h1 class="infoTitle">Selected service</h1>
+            <p class="infoSubtitle">{{selectedService['title']}}</p>
+          </div>
+          <div class="info-inner-container">
+            <h1 class="infoTitle">Date</h1>
+            <p class="infoSubtitle">{{selectedDate['month']}}/{{selectedDate['day']}}/{{selectedDate['year']}}</p>
+          </div>
+          <div class="info-inner-container">
+            <h1 class="infoTitle">Your name</h1>
+            <p class="infoSubtitle">{{this.form.name.value}}</p>
+          </div>
+          <div class="info-inner-container">
+            <h1 class="infoTitle">Your email address</h1>
+            <p class="infoSubtitle">{{this.form.email.value}}</p>
+          </div>
+          <div class="info-inner-container">
+            <h1 class="infoTitle">Your phone number</h1>
+            <p class="infoSubtitle">{{this.form.phone.value}}</p>
+          </div>
+        </div>
+        <div class="buttons">
+          <button 
+            value="Next"
+            class="btn btn-primary--gray"
+            style="min-width: 140px"
+            (click)="prevPage()"
+          >
+          Back
+          </button>
+          <button 
+            value="Next"
+            class="btn btn-primary--accent"
+            style="min-width: 140px"
+            (click)="setBooking()"
+          >
+          Set reservation
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

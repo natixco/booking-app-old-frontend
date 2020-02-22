@@ -1,0 +1,62 @@
+<div class="container">
+  <div class="inner-container">
+    <div class="header-big">
+      <div>
+        <div routerLink="/app/tables/{{tableId}}" class="back-link">
+          <i class="eva eva-chevron-left"></i>
+          <p>Back to table - {{tableName}}</p>
+        </div>
+        <p class="title">Edit service - {{currentService.title}}</p>
+        <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+    </div>
+    <form [formGroup]="serviceForm">
+      <div class="input-container">
+        <label for="title" [ngClass]="{'input-invalid': form.title.touched && form.title.errors}">
+          <span *ngIf="!form.title.touched || !form.title.errors">Service name</span>
+          <span *ngIf="form.title.touched && form.title.errors">
+            <span *ngIf="form.title.errors.required">Service name is required</span>
+          </span>
+        </label>
+        <input type="text" name="title" formControlName="title" (change)="checkEdited('title')">
+      </div>
+      <div class="input-container">
+        <label for="description" [ngClass]="{'input-invalid': form.description.touched && form.description.errors}">
+          <span *ngIf="!form.description.touched || !form.description.errors">Description</span>
+          <span *ngIf="form.description.touched && form.description.errors">
+            <span *ngIf="form.description.errors.required">Description is required</span>
+          </span>
+        </label>
+        <input type="text" name="description" formControlName="description" (change)="checkEdited('description')">
+      </div>
+      <div class="input-container">
+        <label for="price" [ngClass]="{'input-invalid': form.price.touched && form.price.errors}">
+          <span *ngIf="!form.price.touched || !form.price.errors">Price</span>
+          <span *ngIf="form.price.touched && form.price.errors">
+            <span *ngIf="form.price.errors.required">Price is required</span>
+          </span>
+        </label>
+        <input type="text" name="price" formControlName="price" (change)="checkEdited('price')">
+      </div>
+      <div class="input-container">
+        <label for="duration" [ngClass]="{'input-invalid': form.duration.touched && form.duration.errors}">
+          <span *ngIf="!form.duration.touched || !form.duration.errors">Duration (in minutes)</span>
+          <span *ngIf="form.duration.touched && form.duration.errors">
+            <span *ngIf="form.duration.errors.required">Duration is required</span>
+          </span>
+        </label>
+        <input type="text" name="duration" formControlName="duration" (change)="checkEdited('duration')">
+      </div>
+      <button 
+        class="btn btn-primary--accent"
+        [disabled]="serviceForm.invalid || !edited"
+        [ngClass]="{'btn-disabled': serviceForm.invalid || !edited}"
+        (click)="saveForm()">
+        <div class="loader" *ngIf="isLoading">
+          <div class="innerLoader"></div>
+        </div>
+        Save
+      </button>
+    </form>
+  </div>
+</div>

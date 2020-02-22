@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="background"></div>
+  <a routerLink="/" class="title">Bookly</a>
+  <form [formGroup]="loginForm">
+    <h1 class="subtitle" *ngIf="isLogin">{{ 'AUTH.LOGIN.subtitle' | translate }}</h1>
+    <h1 class="subtitle" *ngIf="!isLogin">{{ 'AUTH.LOGIN.loggedout' | translate }}</h1>
+    <div class="input-container">
+      <label for="email" [ngClass]="{'input-invalid': form.email.touched && form.email.errors}">
+        <span *ngIf="!form.email.touched || !form.email.errors">Email</span>
+        <span *ngIf="form.email.touched && form.email.errors">
+          <span *ngIf="form.email.errors.required">Email is required.</span>
+        </span>
+      </label>
+      <input type="text" name="email" formControlName="email" placeholder="Email">
+    </div>
+    <div class="input-container">
+      <label for="password" [ngClass]="{'input-invalid': form.password.touched && form.password.errors}">
+        <span *ngIf="!form.password.touched || !form.password.errors">Password</span>
+        <span *ngIf="form.password.touched && form.password.errors">
+          <span *ngIf="form.password.errors.required">Password is required.</span>
+        </span>
+      </label>
+      <input type="password" name="password" formControlName="password" placeholder="Password">
+    </div>
+    <re-captcha
+      #captchaRef="reCaptcha"
+      (resolved)="resolved($event)"
+      siteKey="6Ldk0bUUAAAAACJE9SF--rbm8EFrcAAwSMboBLGd"
+      size="invisible"
+      style="opacity: 0; visibility: hidden;">
+    </re-captcha>
+    <button
+      type="submit"
+      class="btn btn-primary--accent"
+      [disabled]="loginForm.invalid || isLoading"
+      [ngClass]="{'btn-disabled': loginForm.invalid || isLoading}"
+      (click)="onLogin()">
+      <!-- (click)="onSubmit(captchaRef)"> -->
+      <div class="loader" *ngIf="isLoading">
+        <div class="innerLoader"></div>
+      </div>
+      <!-- <div class="btn-hover"></div> -->
+      {{ 'AUTH.login' | translate}}
+    </button>
+    <div class="info">
+      <p>{{ 'AUTH.LOGIN.noacc1' | translate }} <a routerLink="/auth/signup">{{ 'AUTH.LOGIN.noacc2' | translate }}</a></p>
+      <p>{{ 'AUTH.LOGIN.forgotpw1' | translate}} <a routerLink="/auth/forgot-password">{{ 'AUTH.LOGIN.forgotpw2' | translate }}</a></p>
+    </div>
+  </form>
+</div>

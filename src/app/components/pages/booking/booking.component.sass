@@ -1,0 +1,208 @@
+@import '../../../../assets/_import.sass'
+
+.container
+  position: absolute
+  top: 0
+  left: 0
+  width: 100vw
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  align-items: center
+  animation: none
+
+  .status-bar
+    position: fixed
+    top: 0
+    left: 0
+    width: 100vw
+    height: 5px
+    background: #DEE2E5
+
+    .inner-status-bar
+      position: absolute
+      top: 0
+      left: 0
+      width: 0%
+      height: 100%
+      background: $accentColor1
+      transition: all .2s ease
+
+  .inner-container
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    
+    .buttons
+      position: relative
+      width: 100%
+      height: auto
+      display: flex
+      flex-direction: row
+      justify-content: center
+      animation: slidedown .6s ease
+      margin: 50px 0
+
+      .btn
+        margin: 0 15px
+
+    .box
+      position: relative
+      margin-top: 100px
+      display: flex
+      flex-direction: column
+      align-items: center
+
+      .title
+        font-size: 34px
+        font-weight: 700
+        color: $black
+
+      .subtitle
+        font-size: 22px
+        font-weight: 400
+        color: $gray
+        margin-top: 5px
+
+    #box_1
+      
+      select
+        margin-top: 50px
+
+      .selected-service-box
+        margin-top: 50px
+        position: relative
+        width: 650px
+        height: auto
+        padding: 30px
+        border-radius: 4px
+        box-shadow: 0 4px 12px rgba($gray, .15)
+        animation: slidedown .6s ease
+
+        .info-inner-container
+          margin-bottom: 20px
+
+          .infoTitle
+            font-size: 20px
+            font-weight: 700
+            color: $black
+            margin-bottom: 5px
+
+          .infoSubtitle
+            font-size: 18px
+            font-weight: 400
+            color: $gray
+
+    #box_2
+
+      .box-big-container
+        position: relative
+        display: flex
+        flex-direction: column
+        align-items: center
+
+        .box-inner-container
+          margin-top: 50px
+          position: relative
+          display: flex
+          flex-direction: row
+
+          .inner-box
+            position: relative
+            width: 350px
+            height: 400px
+            margin: 0 15px
+            padding: 30px
+            border-radius: 4px
+            box-shadow: 0 4px 12px rgba($gray, .15)
+            animation: slidedown .6s ease
+            display: flex
+            flex-direction: column
+            align-items: center
+
+            .boxTitle
+              font-size: 20px
+              font-weight: 700
+              color: $black
+              margin-bottom: 5px
+
+            .boxSubtitle
+              font-size: 16px
+              font-weight: 400
+              color: $gray
+
+          .timepicker
+            position: absolute
+            left: 0
+            bottom: 0
+            width: 100%
+            height: 350px
+            overflow: hidden
+
+            .inner-timepicker
+              position: absolute
+              top: 0
+              left: 0
+              width: 100%
+              height: 100%
+              overflow-y: auto
+
+              .notime
+                color: $gray
+                cursor: default !important
+                &:hover
+                  color: $gray
+
+              p
+                text-align: center
+                font-size: 22px
+                font-weight: 400
+                color: rgba($gray, .6)
+                transition: all .2s ease
+                cursor: pointer
+                margin-bottom: 5px
+                &:first-child
+                  margin-top: 50px
+                &:last-child
+                  margin-bottom: 50px
+                &:hover
+                  color: $black
+                &.active
+                  font-size: 35px
+                  font-weight: 700
+                  color: $accentColor1
+    
+    #box_3
+      .inputs
+        margin-top: 50px
+        padding: 30px
+        border-radius: 4px
+        box-shadow: 0 4px 8px rgba($gray, .15)
+        animation: slidedown .6s ease
+
+    #box_4
+
+      .info
+        margin-top: 50px
+        position: relative
+        width: 650px
+        height: auto
+        padding: 30px
+        border-radius: 4px
+        box-shadow: 0 4px 8px rgba($gray, .15)
+        animation: slidedown .6s ease
+
+        .info-inner-container
+          margin-bottom: 20px
+
+          .infoTitle
+            font-size: 20px
+            font-weight: 700
+            color: $black
+            margin-bottom: 5px
+
+          .infoSubtitle
+            font-size: 18px
+            font-weight: 400
+            color: $gray

@@ -1,0 +1,7 @@
+<app-sidebar *ngIf="_Router.url.startsWith('/app')"></app-sidebar>
+
+<router-outlet></router-outlet>
+
+<!-- <ul class="notifications-container">
+  <app-notification-popup *ngFor="let item of notifications" [title]="item.title" [description]="item.description" [icon]="item.icon"></app-notification-popup>
+</!-->

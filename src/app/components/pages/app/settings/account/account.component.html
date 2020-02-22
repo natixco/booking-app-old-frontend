@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="inner-container">
+    <div class="header-big">
+      <div>
+        <div routerLink="/app/settings" class="back-link">
+          <i class="eva eva-chevron-left"></i>
+          <p>Back to settings</p>
+        </div>
+        <p class="title">Account information</p>
+        <p class="subtitle">Lorem ipsum dolor sit amet.</p>
+      </div>
+    </div>
+    <form [formGroup]="accountForm">
+      <div class="input-container">
+        <label for="name" [ngClass]="{'input-invalid': _accountForm.name.touched && _accountForm.name.errors}">
+          <span *ngIf="!_accountForm.name.touched || !_accountForm.name.errors">Name</span>
+          <span *ngIf="_accountForm.name.touched && _accountForm.name.errors">
+            <span *ngIf="_accountForm.name.errors.required">Name is required.</span>
+          </span>
+        </label>
+        <input type="text" name="name" formControlName="name" placeholder="Your name">
+      </div>
+      <div class="input-container">
+        <label for="email" [ngClass]="{'input-invalid': _accountForm.email.touched && _accountForm.email.errors}">
+          <span *ngIf="!_accountForm.email.touched || !_accountForm.email.errors">Email</span>
+          <span *ngIf="_accountForm.email.touched && _accountForm.email.errors">
+            <span *ngIf="_accountForm.email.errors.required">Email address is required.</span>
+          </span>
+        </label>
+        <input type="text" name="email" formControlName="email" placeholder="Your email address">
+      </div>
+      <button
+        class="btn btn-primary--accent">
+        Save
+      </button>
+    </form>
+    <div class="header-small">
+      <div>
+        <p class="title">Change password</p>
+        <p class="subtitle">Lorem ipsum dolor sit amet.</p>
+      </div>
+    </div>
+    <form [formGroup]="passwordForm">
+      <div class="input-container">
+        <label for="newPassword" [ngClass]="{'input-invalid': _passwordForm.newPassword.touched && _passwordForm.newPassword.errors}">
+          <span *ngIf="!_passwordForm.newPassword.touched || !_passwordForm.newPassword.errors">New password</span>
+          <span *ngIf="_passwordForm.newPassword.touched && _passwordForm.newPassword.errors">
+            <span *ngIf="_passwordForm.newPassword.errors.required">New password is required.</span>
+          </span>
+        </label>
+        <input type="password" name="newPassword" formControlName="newPassword" placeholder="New password">
+      </div>
+      <div class="input-container">
+        <label for="confirmNewPassword" [ngClass]="{'input-invalid': _passwordForm.confirmNewPassword.touched && _passwordForm.confirmNewPassword.errors}">
+          <span *ngIf="!_passwordForm.confirmNewPassword.touched || !_passwordForm.confirmNewPassword.errors">Confirm new password</span>
+          <span *ngIf="_passwordForm.confirmNewPassword.touched && _passwordForm.confirmNewPassword.errors">
+            <span *ngIf="_passwordForm.confirmNewPassword.errors.required">Confirm new password is required.</span>
+          </span>
+        </label>
+        <input type="password" name="confirmNewPassword" formControlName="confirmNewPassword" placeholder="Confirm new password">
+      </div>
+      <button
+        class="btn btn-primary--accent">
+        Save
+      </button>
+    </form>
+    <div class="header-small">
+      <div>
+        <p class="title">Change language</p>
+        <p class="subtitle">If you choose a language it will be automatically saved to your account.</p>
+      </div>
+    </div>
+    <div class="input-container">
+      <select (change)="changeLang($event.target.value)">
+        <option *ngFor="let item of languages" [value]="item.code" [selected]="item.code === currentlang">{{item.lang}}</option>
+      </select>
+    </div>
+    <div class="header-small">
+      <div>
+        <p class="title">Subscription plan</p>
+        <p class="subtitle">Here you can select your subscription plan or cancel it anytime.</p>
+      </div>
+    </div>
+    <ul class="plans">
+      <li class="plan"></li>
+      <li class="plan"></li>
+      <li class="plan"></li>
+    </ul>
+  </div>
+</div>

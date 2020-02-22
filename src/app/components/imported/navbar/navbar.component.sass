@@ -1,0 +1,202 @@
+@import '../../../../assets/_import.sass'
+
+nav
+  position: relative
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100px
+  border-bottom: 1px solid rgba(0,0,0,.1)
+  z-index: 99
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: stretch
+
+  ul
+    position: relative
+    width: auto
+    height: 100%
+
+    li
+      position: relative
+      width: auto
+      height: 100%
+      list-style: none
+      float: left
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+
+  .mainlinks
+    li
+      padding: 0 25px
+      cursor: pointer
+      margin-right: 10px
+      &:first-child
+        margin: 0 30px
+      &:hover
+        p
+          color: $accentColor1
+
+    .title
+      cursor: pointer
+
+      a
+        font-size: 40px
+        font-weight: 700
+        text-decoration: none
+        color: $black
+
+    p
+      color: $black
+      font-size: 18px
+      cursor: pointer
+
+  .buttons
+    position: relative
+    width: auto
+    height: 100%
+    right: 50px
+    display: flex
+    flex-direction: row
+    align-items: center
+
+    .btn
+      margin: 0 15px
+
+    .language-selector
+      position: relative
+      width: 75px
+      height: 100%
+      margin-right: 30px
+
+      .selected
+        position: relative
+        width: 100%
+        height: 100%
+        display: flex
+        flex-direction: row
+        align-items: center
+        justify-content: space-between
+        padding-left: 15px
+
+        img
+          width: 32px
+
+        i
+          font-size: 28px
+          color: $black
+
+      .languages
+        position: absolute
+        top: 100px
+        height: 0px
+        width: 195px
+        overflow: hidden
+        box-shadow: 0 4px 8px rgba($gray, .15)
+        border-bottom-left-radius: 4px
+        border-bottom-right-radius: 4px
+        background: white
+
+        ul
+          width: 100%
+          height: 100%
+          overflow: auto
+          overflow-x: hidden
+
+          li
+            position: relative
+            width: 100%
+            height: 50px
+            list-style: none
+            cursor: pointer
+            display: flex
+            flex-direction: row
+            align-items: center
+            justify-content: flex-start
+            padding-left: 15px
+            &:hover
+              background: #F2F2F2
+
+            img
+              width: 32px
+              left: 15px
+
+            p
+              font-size: 16px
+              color: $black
+              margin-left: 15px
+
+  .user-dropdown
+    width: auto
+    position: relative
+    padding: 0 !important
+    right: 30px
+
+    .info
+      position: relative
+      width: auto
+      height: 100px
+      display: flex
+      flex-direction: row
+      align-items: center
+      // background: blue
+
+      h1
+        line-height: 100px
+        margin-left: 15px
+        margin-right: 15px
+        font-size: 18px
+        font-weight: 400
+        line-height: 30px
+        color: $black
+
+      i
+        font-size: 32px
+        height: 32px
+        color: $black
+
+    .dropdown
+      width: 100%
+      height: 0px
+      position: absolute
+      top: 100px
+      box-shadow: 0 3px 3px 0px rgba(0,0,0,.1)
+      overflow: hidden
+      border-bottom-left-radius: 4px
+      border-bottom-right-radius: 4px
+
+      ul
+        width: 100%
+        height: 100%
+
+        li
+          margin: 0
+          list-style: none
+          height: 50px
+          width: 100%
+          position: relative
+          cursor: pointer
+          background: white
+          &:last-child
+            border-bottom-left-radius: 4px
+            border-bottom-right-radius: 4px
+          &:hover
+            background: #F2F2F2
+
+          p
+            position: absolute
+            top: 50%
+            transform: translateY(-50%)
+            left: 15px
+            font-size: 16px
+            color: $black
+
+
+.activeRoute
+
+  p
+    color: $accentColor1 !important
+    font-weight: 700

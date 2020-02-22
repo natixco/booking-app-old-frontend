@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="inner-container">
+    <div class="header-big">
+      <div>
+        <div routerLink="/app/tables/{{tableId}}" class="back-link">
+          <i class="eva eva-chevron-left"></i>
+          <p>Back to tables</p>
+        </div>
+        <p class="title">Edit table - {{tableName}}</p>
+        <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+    </div>
+    <form [formGroup]="calendarForm">
+      <div class="input-container">
+        <label for="name" [ngClass]="{'input-invalid': form.name.touched && form.name.errors}">
+          <span *ngIf="!form.name.touched || !form.name.errors">Calendar name</span>
+          <span *ngIf="form.name.touched && form.name.errors">
+            <span *ngIf="form.name.errors.required">Calendar name is required</span>
+          </span>
+        </label>
+        <input type="text" name="name" formControlName="name" (change)="isFormInvalid()">
+      </div>
+      <div class="inner-container">
+        <h1 class="title">Select available days</h1>
+        <ul class="day-selector">
+          <li (click)="changeDay('Monday', $event.target)">Monday</li>
+          <li (click)="changeDay('Tuesday', $event.target)">Tuesday</li>
+          <li (click)="changeDay('Wednesday', $event.target)">Wednesday</li>
+          <li (click)="changeDay('Thursday', $event.target)">Thursday</li>
+          <li (click)="changeDay('Friday', $event.target)">Friday</li>
+          <li (click)="changeDay('Saturday', $event.target)">Saturday</li>
+          <li (click)="changeDay('Sunday', $event.target)">Sunday</li>
+        </ul>
+      </div>
+      <div class="inner-container" *ngIf="days.length !== 0">
+        <h1 class="title">Set opening times</h1>
+        <ul class="time-selector">
+          <li class="time-header">
+            <div style="width: 33.333%">Day</div>
+            <div style="width: 33.333%">Start of day</div>
+            <div style="width: 33.333%">End of day</div>
+          </li>
+          <li *ngFor="let item of days">
+            <div  style="width: 33.333%" class="time-day">
+              <p>{{item}}</p>
+            </div>
+            <div style="width: 33.333%">
+              <input type="time" (change)="changeStartTime(item, $event.target.value)">
+            </div>
+            <div style="width: 33.333%">
+              <input type="time" (change)="changeEndTime(item, $event.target.value)">
+            </div>
+          </li>
+        </ul>
+      </div>
+      <button 
+        class="btn btn-primary--accent btn-with-hover"
+        [disabled]="formIsInvalid"
+        [ngClass]="{'btn-disabled': formIsInvalid}"
+        (click)="saveForm()">
+        <div class="loader" *ngIf="isLoading">
+          <div class="innerLoader"></div>
+        </div>
+        Save
+      </button>
+    </form>
+  </div>
+</div>

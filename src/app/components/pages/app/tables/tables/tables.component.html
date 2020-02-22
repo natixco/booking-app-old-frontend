@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="inner-container">
+    <div class="header-big">
+      <div>
+        <p class="title">Your tables</p>
+        <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <button
+        class="btn btn-primary--accent"
+        routerLink="/app/tables/createTable">
+        New table
+      </button>
+    </div>
+    <div class="container-loader" *ngIf="isLoading">
+      <div class="inner-container-loader"></div>
+    </div>
+    <ul class="list" *ngIf="!isLoading">
+      <li *ngFor="let item of tables">
+        <p>{{item.name}}</p>
+        <div class="buttons">
+          <i class="eva eva-link-2-outline" (click)="copyLink(item.ID)" title="Copy table's booking link to clipboard"></i>
+          <i class="eva eva-edit-2-outline" (click)="editTable(item.ID)" title="Edit table"></i>
+          <i class="eva eva-trash-2-outline" (click)="confirmDelete(item)" title="Delete table"></i>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="popup-container" *ngIf="showDeletePopup">
+  <div class="popup-inner-container">
+    <div class="popup-header">
+      <p class="popup-header-title">Delete table</p>
+      <i class="eva eva-close-outline" (click)="cancel()"></i>
+    </div>
+    <div>
+      <p class="title">Are you sure you want to delete the table called '{{deletingTableId['name']}}'?</p>
+      <p class="subtitle">This will delete all services that you added to this table and will no longer be bookable. Past bookings will still show up in your job history.</p>
+    </div>
+    <div class="buttons">
+      <button
+        class="btn btn-secondary--gray"
+        (click)="cancel()">
+        Cancel
+      </button>
+      <button
+        class="btn btn-primary--warning"
+        (click)="deleteTable()">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,145 @@
+<div class="verify-container" *ngIf="!isVerified">
+  <div class="verify-inner-container">
+    <span class="icon-alert-circle-outline"></span>
+    <div>
+      <div class="title">Unverified account</div>
+      <div class="subtitle">Please check your email and follow the instructions to verify your account. If you did not receive any email or if it is expired, you can resend one.</div>
+      <button
+        class="btn btn-primary--white">
+        Resend verification email
+      </button>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="inner-container">
+    <div class="header-big">
+      <div>
+        <p class="title">{{greeting}}, {{userInfo['user']}}.</p>
+        <p class="subtitle">Here is how your business is doing.</p>
+      </div>
+      <ul class="infobox">
+        <li>
+          <p class="info-title">New bookings</p>
+          <p class="info-subtitle">35</p>
+        </li>
+        <li>
+          <p class="info-title">New customers</p>
+          <p class="info-subtitle">12</p>
+        </li>
+      </ul>
+    </div>
+    <div class="cards">
+      <div class="col40 card">
+        <div class="table-list-info" *ngIf="todayBookings.length === 0">
+          <i class="eva eva-book-open-outline"></i>
+          <p class="title">You don't have any bookings today</p>
+          <p class="subtitle">Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div *ngIf="todayBookings.length > 0">
+          <div class="title">Today's bookings</div>
+          <div class="subtitle">Don't forget these!</div>
+          <div class="table-list-container">
+            <div class="table-list-header">
+              <div class="table-list-item table-list-item40">
+                <p>Name</p>
+              </div>
+              <div class="table-list-item table-list-item40">
+                <p>Service</p>
+              </div>
+              <div class="table-list-item table-list-item20">
+                <p>Time</p>
+              </div>
+            </div>
+            <div class="table-list-inner-container">
+              <ul class="table-list">
+                <li *ngFor="let item of todayBookings">
+                  <div class="table-list-item table-list-item40">
+                    <p>{{item.customerName}}</p>
+                  </div>
+                  <div class="table-list-item table-list-item40">
+                    <p>{{item.service}}</p>
+                  </div>
+                  <div class="table-list-item table-list-item20">
+                    <p>{{item.time}}</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col60 card">
+        <div class="table-list-info" *ngIf="todayBookings2.length === 0">
+          <i class="eva eva-book-open-outline"></i>
+          <p class="title">You don't have any new bookings</p>
+          <p class="subtitle">Lorem ipsum dolor sit amet.</p>
+        </div>
+        <div *ngIf="todayBookings2.length > 0">
+          <div class="title">New bookings</div>
+          <div class="subtitle">New opportunities to get to know your customers better!</div>
+          <div class="table-list-container">
+            <div class="table-list-header">
+              <div class="table-list-item table-list-item30">
+                <p>Name</p>
+              </div>
+              <div class="table-list-item table-list-item30">
+                <p>Service</p>
+              </div>
+              <div class="table-list-item table-list-item20">
+                <p>Date</p>
+              </div>
+              <div class="table-list-item table-list-item20">
+                <p>Time</p>
+              </div>
+            </div>
+            <div class="table-list-inner-container">
+              <ul class="table-list">
+                <li *ngFor="let item of todayBookings">            
+                  <div class="table-list-item table-list-item30">
+                    <p>{{item.customerName}}</p>
+                  </div>
+                  <div class="table-list-item table-list-item30">
+                    <p>{{item.service}}</p>
+                  </div>
+                  <div class="table-list-item table-list-item20">
+                    <p>{{item.date}}</p>
+                  </div>
+                  <div class="table-list-item table-list-item20">
+                    <p>{{item.time}}</p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div class="container">
+  <div class="header">
+    <h1 class="title">Calendars</h1>
+    <button
+      class="btn btn-primary--accent"
+      routerLink="/calendarcreate"
+      [disabled]="false">
+      Add new calendar
+    </button>
+  </div>
+  <ul class="calendar-container">
+    <li>
+      <h1>Calendar name</h1>
+      <button class="rightBtn" routerLink="/services/0">
+        <fa-icon [icon]="faChevronRight"></fa-icon>
+      </button>
+    </li>
+    <li>
+      <h1>Calendar name</h1>
+      <button class="rightBtn" routerLink="/services/1">
+        <fa-icon [icon]="faChevronRight"></fa-icon>
+      </button>
+    </li>
+  </ul>
+</div> -->

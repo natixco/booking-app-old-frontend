@@ -1,0 +1,86 @@
+<nav>
+  <div>
+    <div class="logo">
+      <p>Bookly</p>
+    </div>
+    <ul class="links">
+      <button [disabled]="_Router.url === '/app/dashboard'" routerLink="/app/dashboard" routerLinkActive="activeRoute"  [routerLinkActiveOptions]="{exact: true}">
+        <div class="wrapper">
+          <div class="icon">
+            <i class="eva eva-home" *ngIf="_Router.url === '/app/dashboard'"></i>
+            <i class="eva eva-home-outline" *ngIf="_Router.url !== '/app/dashboard'"></i>
+          </div>
+          <p>{{ 'SIDEBAR.dashboard' | translate}}</p>
+        </div>
+      </button>
+      <button [disabled]="_Router.url === '/app/schedule'" routerLink="/app/schedule" routerLinkActive="activeRoute"  [routerLinkActiveOptions]="{exact: true}">
+        <div class="wrapper">
+          <div class="icon">
+            <i class="eva eva-clock" *ngIf="_Router.url === '/app/schedule'"></i>
+            <i class="eva eva-clock-outline" *ngIf="_Router.url !== '/app/schedule'"></i>
+          </div>
+          <p>{{ 'SIDEBAR.schedule' | translate}}</p>
+        </div>
+      </button>
+      <button [disabled]="_Router.url.startsWith('/app/tables')" routerLink="/app/tables" routerLinkActive="activeRoute"  [routerLinkActiveOptions]="{exact: false}">
+        <div class="wrapper">
+          <div class="icon">
+            <i class="eva eva-book-open" *ngIf="_Router.url.startsWith('/app/tables')"></i>
+            <i class="eva eva-book-open-outline" *ngIf="!_Router.url.startsWith('/app/tables')"></i>
+          </div>
+          <p>{{ 'SIDEBAR.tables' | translate}}</p>
+        </div>
+      </button>
+      <button [disabled]="_Router.url.startsWith('/app/settings')" routerLink="/app/settings" routerLinkActive="activeRoute"  [routerLinkActiveOptions]="{exact: false}">
+        <div class="wrapper">
+          <div class="icon">
+            <i class="eva eva-settings" *ngIf="_Router.url.startsWith('/app/settings')"></i>
+            <i class="eva eva-settings-outline" *ngIf="!_Router.url.startsWith('/app/settings')"></i>
+          </div>
+          <p>{{ 'SIDEBAR.settings' | translate}}</p>
+        </div>
+      </button>
+    </ul>
+  </div>
+  <div class="profile" (click)="toggleUserDropdown()">
+    <div class="wrapper">
+      <div class="profile-names">
+        <div class="profile-names-inner">
+          <div *ngIf="userInfo['company'] !== undefined">
+            <p class="profile-name">{{userInfo['user']}}</p>
+            <p class="profile-company-name">{{userInfo['company']}}</p>
+          </div>
+          <p class="profile-name" *ngIf="userInfo['company'] === undefined">{{userInfo['user']}}</p>
+        </div>
+      </div>
+      <i class="eva eva-chevron-up" [@rotateIcon]="userDropdownIsOpened"></i>
+    </div>
+    <ul class="dropdown" [@toggleUserDropdown]="userDropdownIsOpened">
+      <button [disabled]="_Router.url === '/app/settings/account'" routerLink="/app/settings/account" routerLinkActive="activeRoute" [routerLinkActiveOptions]="{exact: true}">
+        <div class="wrapper">
+          <div class="icon">
+            <i class="eva eva-person" *ngIf="_Router.url === '/app/settings/account'"></i>
+            <i class="eva eva-person-outline" *ngIf="_Router.url !== '/app/settings/account'"></i>
+          </div>
+          <p>{{ 'SIDEBAR.youracc' | translate}}</p>
+        </div>
+      </button>
+      <button routerLink="/help">
+        <div class="wrapper">
+          <div class="icon">
+            <i class="eva eva-question-mark-circle-outline"></i>
+          </div>
+          <p>{{ 'SIDEBAR.help' | translate}}</p>
+        </div>
+      </button>
+      <button (click)="logout()">
+        <div class="wrapper">
+          <div class="icon">
+            <i class="eva eva-log-out"></i>
+          </div>
+          <p>{{ 'AUTH.logout' | translate}}</p>
+        </div>
+      </button>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,81 @@
+@import '../_import.sass'
+
+.table-list-info
+  position: relative
+  width: 100%
+  height: 100%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+  i
+    font-size: 36px
+    color: $black
+    height: 32px
+
+  .title
+    font-size: 18px
+    margin: 0 !important
+    margin-top: 15px !important
+
+  .subtitle
+    font-size: 14px
+    margin: 0 !important
+    margin-top: 5px !important
+
+.table-list-container
+  position: relative
+  margin-top: 30px
+  margin-left: 25px
+  width: calc(100% - 25px)
+  height: 280px
+  
+  .table-list-header
+    position: relative
+    height: 30px
+    padding-right: 10px
+
+    p
+      font-weight: 700 !important
+      color: $black !important
+
+  .table-list-inner-container
+    position: relative
+    width: 100%
+    height: 250px
+    overflow-x: hidden
+
+  .table-list
+    position: relative
+    width: 100%
+
+    li
+      position: relative
+      list-style: none
+      width: 100%
+
+  .table-list-item
+    position: relative
+    float: left
+    display: flex
+    flex-direction: row
+    align-items: center
+    margin-bottom: 5px !important
+
+    p
+      font-size: 16px
+      font-weight: 400
+      color: $gray
+
+  .table-list-item40
+    width: 40%
+
+  .table-list-item30
+    width: 30%
+
+  .table-list-item20
+    width: 20%
+
+  .table-list-item10
+    width: 10%

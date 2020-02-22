@@ -1,0 +1,52 @@
+{
+  "AUTH": {
+    "login": "Bejelentkezés",
+    "signup": "Regisztráció",
+    "logout": "Kijelentkezés",
+    "LOGIN": {
+      "subtitle": "Üdv újra!",
+      "noacc1": "Nincs még fiókod?",
+      "noacc2": "Regisztrálj itt",
+      "forgotpw1": "Elfelejtetted a jelszavad?",
+      "forgotpw2": "Változtasd meg itt",
+      "loggedout": "Sikeresen kijelentkeztél!"
+    },
+    "SIGNUP": {
+      "subtitle": "Hozz létre egy fiókot",
+      "haveacc1": "Már van fiókod?",
+      "haveacc2": "Jelentkezz be itt",
+      "terms1": "A regisztrációval elfogadja a következőt",
+      "terms2": "Szolgáltatási feltételek",
+      "google": "Ezt a weboldalt védi a"
+    },
+    "FORGOTPW": {
+      "subtitle": "Elfelejtett jelszó",
+      "subtitle2": "Írd be az e-mail címed a jelszó megváltoztatásához",
+      "backtologin": "Vissza a bejelentkezéshez",
+      "button": "Jelszó megváltoztatása"
+    }
+  },
+  "HOME": {
+    "cta": "Kezdj hozzá ingyenesen"
+  },
+  "SIDEBAR": {
+    "dashboard": "Irányítópult",
+    "schedule": "Beosztás",
+    "tables": "Táblák",
+    "settings": "Beállítások",
+    "youracc": "Fiók",
+    "help": "Segítség"
+  },
+  "TITLE": {
+    "login": "Bejelentkezés",
+    "signup": "Regisztráció",
+    "loggedout": "Sikeres kijelentkezés",
+    "forgotpw": "Elfelejtett jelszó",
+    "company": "Cég adatok",
+    "table_edit": "Tábla szerkesztés",
+    "table_create": "Tábla létrehozás",
+    "table": "Tábla",
+    "service_edit": "Szolgáltatás szerkesztés",
+    "service_create": "Szolgáltatás létrehozás"
+  }
+}

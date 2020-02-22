@@ -1,0 +1,39 @@
+{
+  "AUTH": {
+    "login": "Inloggen",
+    "signup": "Registreren",
+    "logout": "Uitloggen",
+    "LOGIN": {
+      "subtitle": "Welkom terug!",
+      "noacc1": "Heb je nog geen account?",
+      "noacc2": "Registreer hier",
+      "forgotpw1": "Jouw wachtwoord vergeten?",
+      "forgotpw2": "Wijzig het hier"
+    },
+    "SIGNUP": {
+      "subtitle": "Maak een account aan",
+      "haveacc1": "Heb je al een account?",
+      "haveacc2": "Hier inloggen",
+      "terms1": "Door u aan te melden gaat u akkoord met onze",
+      "terms2": "Servicevoorwaarden",
+      "google": "Deze site wordt beschermd door de"
+    },
+    "FORGOTPW": {
+      "subtitle": "Wachtwoord vergeten",
+      "subtitle2": "Voer jouw e-mailadres in om jouw wachtwoord te wijzigen",
+      "backtologin": "Terug naar de inlogpagina",
+      "button": "Wachtwoord wijzigen"
+    }
+  },
+  "HOME": {
+    "cta": "Ga gratis aan de slag"
+  },
+  "SIDEBAR": {
+    "dashboard": "Dashboard",
+    "schedule": "Schema",
+    "tables": "Tabellen",
+    "settings": "Instellingen",
+    "youracc": "Jouw account",
+    "help": "Help"
+  }
+}

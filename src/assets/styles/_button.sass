@@ -1,0 +1,151 @@
+@import '../_import.sass'
+
+button
+  background: transparent
+
+.btn
+  height: 50px
+  padding: 0 40px
+  border-radius: 4px
+  cursor: pointer
+  font-size: 16px
+  font-weight: 700
+  background: transparent
+  line-height: 16px
+  text-align: center
+  overflow: hidden
+  transition: all .2s ease
+
+//----------------------------------------- PRIMARY
+.btn-primary--accent
+  color: white
+  background: $accentColor1
+  box-shadow: rgba($accentColor1, .15) 0px 12px 14px 0px
+  &:hover, &:focus
+    background: darken($accentColor1, 10%)
+
+.btn-primary--warning
+  color: white
+  background: $errorColor
+  &:hover, &:focus
+    background: darken($errorColor, 10%)
+
+.btn-primary--white // SHIT
+  background: white
+  border-color: white
+  color: $accentColor1
+  font-weight: 700
+  box-shadow: rgba(0,0,0, .1) 0px 10px 12px 0px
+  &:hover, &:focus
+    background: darken(white, 10%)
+    border-color: darken(white, 10%)
+
+//----------------------------------------- SECONDARY
+.btn-secondary--accent
+  background: transparent
+  border: 1px solid $accentColor1
+  color: $accentColor1
+  &:hover, &:focus
+    background: $accentColor1
+    color: white
+
+.btn-secondary--gray
+  background: transparent
+  border-color: transparent
+  color: $gray
+  &:hover, &:focus
+    background: transparent
+    color: $black
+
+
+//----------------------------------------- DISABLED
+.btn-disabled
+  background: lighten($accentColor1, 15%)
+  // border-color: lighten($accentColor1, 10%)
+  cursor: not-allowed
+  &:hover, &:focus
+    // border-color: lighten($accentColor1, 10%)
+    background: lighten($accentColor1, 15%)
+
+
+
+
+
+
+//----------------------------------------- BUTTON LOADER
+.loader
+  position: absolute
+  top: -2px
+  left: -2px
+  width: 100%
+  height: 100%
+  background: $accentColor1
+  border: 2px solid $accentColor1
+  border-radius: 4px
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+  cursor: default
+  z-index: 99
+
+  .innerLoader
+    width: 18px
+    height: 18px
+    border-radius: 50%
+    border: 2px solid rgba(255,255,255,.2)
+    border-top-color: white
+    border-left-color: white
+    animation: rotate 1s linear infinite
+
+@keyframes rotate
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+// ⛔ DO NOT EVER REMOVE THE LINES UNDER THESE COMMENTS
+// ⛔ NEED FOR FREAKING COOL BUTTON HOVER
+// ⛔ ALSO DO NOT EVER DELETE THE BTN-HOVER.TS
+
+// .btn-hover
+//   background: radial-gradient(circle closest-side,#51B9FF,transparent)
+//   // background: radial-gradient(circle closest-side,#FFB400,transparent)
+//   // background: radial-gradient(circle closest-side,#8e2de2,transparent)
+//   width: 300px
+//   height: 300px
+//   transform: translate(-50%,-50%)
+//   position: absolute
+//   opacity: 0
+//   transition: opacity .3s ease
+//   z-index: 5
+
+// .btn-hover--warning
+//   background: radial-gradient(circle closest-side,rgba(255,255,255,.3),transparent)
+//   width: 300px
+//   height: 300px
+//   transform: translate(-50%,-50%)
+//   position: absolute
+//   opacity: 0
+//   transition: opacity .3s ease
+//   z-index: 5
+
+// .btn-text--white
+//   text-align: center
+//   line-height: 50px
+//   font-size: 16px
+//   font-weight: 700
+//   color: white
+//   z-index: 10
+//   position: relative
+//   white-space: nowrap
+
+// .btn-text--accent
+//   text-align: center
+//   line-height: 50px
+//   font-size: 16px
+//   font-weight: 700
+//   color: $accentColor1
+//   z-index: 10
+//   position: relative
+//   white-space: nowrap

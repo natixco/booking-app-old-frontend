@@ -1,0 +1,60 @@
+{
+  "AUTH": {
+    "login": "Log in",
+    "signup": "Sign up",
+    "logout": "Log out",
+    "LOGIN": {
+      "subtitle": "Welcome back!",
+      "noacc1": "Don't have an account?",
+      "noacc2": "Sign up here",
+      "forgotpw1": "Forgot your password?",
+      "forgotpw2": "Change it here",
+      "loggedout": "You've been successfully logged out!"
+    },
+    "SIGNUP": {
+      "subtitle": "Create an account",
+      "haveacc1": "Already have an account?",
+      "haveacc2": "Log in here",
+      "terms1": "By signing up you agree to our",
+      "terms2": "Terms of service",
+      "google": "This site is protected by the"
+    },
+    "FORGOTPW": {
+      "subtitle": "Forgot password",
+      "subtitle2": "Enter your email address to change your password",
+      "backtologin": "Back to the login page",
+      "button": "Retrieve password"
+    }
+  },
+  "HOME": {
+    "cta": "Get started for free"
+  },
+  "SIDEBAR": {
+    "dashboard": "Dashboard",
+    "schedule": "Schedule",
+    "tables": "Tables",
+    "settings": "Settings",
+    "youracc": "Your account",
+    "help": "Help"
+  },
+  "SETTINGS": {
+    "settings": "Settings",
+    "youracc": "Manage your account and your subscription plan.",
+    "companyDetails": "Company details",
+    "companyDetails2": "View and update your company's details.",
+    "onlinePayments": "Online payments",
+    "onlinePayments2": "Accept payments when clients book your services."
+  },
+  "TITLE": {
+    "login": "Log in",
+    "signup": "Sign up",
+    "loggedout": "Logged out",
+    "forgotpw": "Forgot password",
+    "company": "Company infos",
+    "table_edit": "Table edit",
+    "table_create": "Table create",
+    "table": "Table",
+    "service_edit": "Service edit",
+    "service_create": "Service create"
+  }
+}

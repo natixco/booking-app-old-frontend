@@ -1,0 +1,63 @@
+<div class="container">
+  <div class="inner-container">
+    <div class="header-big">
+      <div>
+        <div routerLink="/app/tables" class="back-link">
+          <i class="eva eva-chevron-left"></i>
+          <p>Back to tables</p>
+        </div>
+        <p class="title">Table - {{tableName}}</p>
+        <p class="subtitle">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+      </div>
+      <div>
+        <button
+          class="btn btn-secondary--accent"
+          routerLink="/app/tables/{{tableId}}/editTable">
+          Edit table details
+        </button>
+        <button
+          class="btn btn-primary--accent"
+          routerLink="/app/tables/{{tableId}}/createService">
+          New service
+        </button>
+      </div>
+    </div>
+    <div class="container-loader" *ngIf="isLoading">
+      <div class="inner-container-loader"></div>
+    </div>
+    <ul class="list" *ngIf="!isLoading">
+      <li *ngFor="let item of services">
+        <p>{{item.title}}</p>
+        <div class="buttons">
+          <i class="eva eva-edit-2-outline" (click)="routeTo(item.ID)"></i>
+          <i class="eva eva-trash-2-outline" (click)="confirmDelete(item)"></i>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="popup-container" *ngIf="showDeletePopup">
+  <div class="popup-inner-container">
+    <div class="popup-header">
+      <p class="popup-header-title">Delete service</p>
+      <i class="eva eva-close-outline" (click)="cancel()"></i>
+    </div>
+    <div>
+      <p class="title">Are you sure you want to delete the service called '{{deletingServiceId['title']}}'?</p>
+      <p class="subtitle">This will delete all services that you added to this table and will no longer be bookable. Past bookings will still show up in your job history.</p>
+    </div>
+    <div class="buttons">
+      <button
+        class="btn btn-secondary--gray"
+        (click)="cancel()">
+        <span class="btn-text">Cancel</span>
+        <div class="btn-hover"></div>
+      </button>
+      <button
+        class="btn btn-primary--warning"
+        (click)="deleteTable()">
+        Delete
+      </button>
+    </div>
+  </div>
+</div>

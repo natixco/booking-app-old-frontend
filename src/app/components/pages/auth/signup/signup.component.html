@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="background"></div>
+  <div>
+    <a routerLink="/" class="title">Bookly</a>
+    <form [formGroup]="signupForm">
+      <h1 class="subtitle">{{ 'AUTH.SIGNUP.subtitle' | translate }}</h1>
+      <div class="input-container">
+        <label for="name" [ngClass]="{'input-invalid': form.name.touched && form.name.errors}">
+          <span *ngIf="!form.name.touched || !form.name.errors">Full name</span>
+          <span *ngIf="form.name.touched && form.name.errors">
+            <span *ngIf="form.name.errors.required">Full name is required.</span>
+            <span *ngIf="form.name.errors.maxlength">Full name can't be longer than 120 charachter.</span>
+          </span>
+        </label>
+        <input type="text" name="name" formControlName="name" placeholder="e.g.: John Smith">
+      </div>
+      <div class="input-container">
+        <label for="email" [ngClass]="{'input-invalid': form.email.touched && form.email.errors}">
+          <span *ngIf="!form.email.touched || !form.email.errors">Email</span>
+          <span *ngIf="form.email.touched && form.email.errors">
+            <span *ngIf="form.email.errors.required">Email is required.</span>
+            <span *ngIf="form.email.errors.email">Email has to be a valid email address.</span>
+            <span *ngIf="form.email.errors.email">Email cant be longer then 65 characters.</span>
+          </span>
+        </label>
+        <input type="text" name="email" formControlName="email" placeholder="e.g.: john.smith@email.com">
+      </div>
+      <div class="input-container">
+        <label for="password" [ngClass]="{'input-invalid': form.password.touched && form.password.errors}">
+          <span *ngIf="!form.password.touched || !form.password.errors">Password</span>
+          <span *ngIf="form.password.touched && form.password.errors">
+            <span *ngIf="form.password.errors.required">Password is required.</span>
+            <span *ngIf="form.password.errors.pattern">Password must contain at least 1 lowercase and 1 uppercase letter, 1 number and have a minimum length of 6 characters.</span>
+            <span *ngIf="form.password.errors.maxlength">Password cant be longer than 100 characters.</span>
+          </span>
+        </label>
+        <input type="password" name="password" formControlName="password" placeholder="Your super secret password">
+      </div>
+      <re-captcha
+        #captchaRef="reCaptcha"
+        (resolved)="resolved($event)"
+        siteKey="6Ldk0bUUAAAAACJE9SF--rbm8EFrcAAwSMboBLGd"
+        size="invisible"
+        style="opacity: 0; visibility: hidden;">
+      </re-captcha>
+  
+      <button 
+        type="submit" 
+        class="btn btn-primary--accent"
+        [disabled]="signupForm.invalid || isLoading"
+        [ngClass]="{'btn-disabled': signupForm.invalid || isLoading}"
+        (click)="onSubmit(captchaRef)">
+        <div class="loader" *ngIf="isLoading">
+          <div class="innerLoader"></div>
+        </div>
+        {{ 'AUTH.signup' | translate }}
+      </button>
+      <div class="info2">
+        <p>{{ 'AUTH.SIGNUP.haveacc1' | translate }} <a routerLink="/auth/login">{{ 'AUTH.SIGNUP.haveacc2' | translate }}</a></p>
+      </div>
+    </form>
+  </div>
+  <div class="info">
+    <p>{{ 'AUTH.SIGNUP.terms1' | translate }}: <a href="">{{ 'AUTH.SIGNUP.terms2' | translate }}</a>.</p>
+    <p>{{ 'AUTH.SIGNUP.google' | translate }} <a href="https://www.google.com/recaptcha/intro/v3.html">Google reCaptcha</a>.</p>
+  </div>
+</div>

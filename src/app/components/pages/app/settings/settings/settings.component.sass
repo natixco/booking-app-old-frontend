@@ -1,0 +1,56 @@
+@import '../../../../../../assets/_import.sass'
+
+.settings-list
+  position: relative
+  width: 100%
+  display: grid
+  grid-template-columns: repeat(3, 1fr)
+  grid-template-rows: repeat(3, 100px)
+  grid-column-gap: 20px
+  grid-row-gap: 20px
+  justify-items: stretch
+  align-items: stretch
+
+  li
+    position: relative
+    list-style: none
+    height: 100px
+    display: flex
+    flex-direction: row
+    align-items: center
+    border-radius: 4px
+    margin-bottom: 30px
+    border: 1px solid rgba(0,0,0,.1)
+    cursor: pointer
+    transition: all .2s ease
+    &:hover
+      border-color: rgba(0,0,0,.2)
+      i, .title
+        color: $accentColor1 !important
+
+    .icon
+      width: 70px
+      height: 100px
+      display: flex
+      flex-direction: column
+      align-items: center
+      justify-content: center
+
+      i
+        font-size: 30px
+        height: 30px
+        color: $black
+        transition: all .2s ease
+
+    .text
+      .title
+        font-size: 18px
+        font-weight: 700
+        color: $black
+        transition: all .2s ease
+
+      .subtitle
+        font-size: 14px
+        font-weight: 400
+        color: $gray
+        margin-top: 0px

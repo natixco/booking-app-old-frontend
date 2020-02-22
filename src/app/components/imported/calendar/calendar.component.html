@@ -1,0 +1,51 @@
+<section class="calendar">
+  <div class="calendar-header">
+    <div class="calendar-header-title">{{headerTitle}}</div>
+    <div class="calendar-header-arrows">
+      <div class="calendar-header-arrow" (click)="leftClick()"><</div>
+      <div class="calendar-header-arrow" (click)="rightClick()">></div>
+    </div>
+  </div>
+  <div class="calendar-labels">
+    <div class="calendar-labels-label">SU</div>
+    <div class="calendar-labels-label">M</div>
+    <div class="calendar-labels-label">TU</div>
+    <div class="calendar-labels-label">W</div>
+    <div class="calendar-labels-label">TH</div>
+    <div class="calendar-labels-label">F</div>
+    <div class="calendar-labels-label">SA</div>
+  </div>
+  <div class="calendar-dates">
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 1}">1</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 2}">2</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 3}">3</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 4}">4</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 5}">5</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 6}">6</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 7}">7</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 8}">8</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 9}">9</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 10}">10</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 11}">11</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 12}">12</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 13}">13</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 14}">14</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 15}">15</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 16}">16</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 17}">17</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 18}">18</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 19}">19</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 20}">20</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 21}">21</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 22}">22</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 23}">23</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 24}">24</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 25}">25</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 26}">26</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 27}">27</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 28}">28</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 29}">29</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 30}">30</div>
+    <div class="calendar-dates-day" (click)="getDate($event.target.innerText)" [ngClass]="{'activeDay': activeDay == 31}">31</div>
+  </div>
+</section>

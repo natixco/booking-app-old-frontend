@@ -1,0 +1,39 @@
+{
+  "AUTH": {
+    "login": "Logga in",
+    "signup": "Registrera",
+    "logout": "Logga ut",
+    "LOGIN": {
+      "subtitle": "Välkommen tillbaka!",
+      "noacc1": "Har du inte ett konto?",
+      "noacc2": "Registrera här",
+      "forgotpw1": "Glömt ditt lösenord?",
+      "forgotpw2": "Ändra det här"
+    },
+    "SIGNUP": {
+      "subtitle": "Skapa ett konto",
+      "haveacc1": "Har du redan ett konto?",
+      "haveacc2": "Logga in här",
+      "terms1": "Genom att registrera dig godkänner du vårt",
+      "terms2": "Villkor för tjänsten",
+      "google": "Denna webbplats skyddas av"
+    },
+    "FORGOTPW": {
+      "subtitle": "Glömt lösenord",
+      "subtitle2": "Ange din e-postadress för att ändra ditt lösenord",
+      "backtologin": "Tillbaka till inloggningssidan",
+      "button": "Ändra lösenord"
+    }
+  },
+  "HOME": {
+    "cta": "Komma igång gratis"
+  },
+  "SIDEBAR": {
+    "dashboard": "Dashbord",
+    "schedule": "Schema",
+    "tables": "Tabeller",
+    "settings": "Inställningar",
+    "youracc": "Ditt konto",
+    "help": "Hjälp"
+  }
+}

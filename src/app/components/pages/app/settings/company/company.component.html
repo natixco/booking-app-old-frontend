@@ -1,0 +1,66 @@
+<div class="container">
+  <div class="inner-container">
+    <div class="header-big">
+      <div>
+        <div routerLink="/app/settings" class="back-link">
+          <i class="eva eva-chevron-left"></i>
+          <p>Back to settings</p>
+        </div>
+        <p class="title">Company details</p>
+        <p class="subtitle">These infos will be used to create invoices.</p>
+      </div>
+    </div>
+    <form [formGroup]="companyForm">
+      <div class="input-container">
+        <label for="company_name" [ngClass]="{'input-invalid': form.company_name.touched && form.company_name.errors}">
+          <span *ngIf="!form.company_name.touched || !form.company_name.errors">Company name</span>
+          <span *ngIf="form.company_name.touched && form.company_name.errors">
+            <span *ngIf="form.company_name.errors.required">Company name is required.</span>
+          </span>
+        </label>
+        <input type="text" name="company_name" formControlName="company_name" placeholder="Your company's name">
+      </div>
+      <div class="input-container">
+        <label for="company_address" [ngClass]="{'input-invalid': form.company_address.touched && form.company_address.errors}">
+          <span *ngIf="!form.company_address.touched || !form.company_address.errors">Company address</span>
+          <span *ngIf="form.company_address.touched && form.company_address.errors">
+            <span *ngIf="form.company_address.errors.required">Company address is required.</span>
+          </span>
+        </label>
+        <input type="text" name="company_address" formControlName="company_address" placeholder="Your company's address">
+      </div>
+      <div class="input-container">
+        <label for="company_country" [ngClass]="{'input-invalid': form.company_country.touched && form.company_country.errors}">
+          <span *ngIf="!form.company_country.touched || !form.company_country.errors">Company country</span>
+          <span *ngIf="form.company_country.touched && form.company_country.errors">
+            <span *ngIf="form.company_country.errors.required">Company country is required.</span>
+          </span>
+        </label>
+        <select name="company_country" formControlName="company_country">
+          <option disabled selected>Your company's country</option>
+          <option value="">USA</option>
+          <option value="Canada">Canada</option>
+          <option value="United Kingdom">United Kingdom</option>
+          <option value="Hungary">Hungary</option>
+          <option value="Germany">Germany</option>
+          <option value="Netherlands">Netherlands</option>
+          <option value="France">France</option>
+          <option value="Sweden">Sweden</option>
+        </select>
+      </div>
+      <div class="input-container">
+        <label for="phone_number" [ngClass]="{'input-invalid': form.phone_number.touched && form.phone_number.errors}">
+          <span *ngIf="!form.phone_number.touched || !form.phone_number.errors">Phone number</span>
+          <span *ngIf="form.phone_number.touched && form.phone_number.errors">
+            <span *ngIf="form.phone_number.errors.required">Phone number is required.</span>
+          </span>
+        </label>
+        <input type="text" name="phone_number" formControlName="phone_number" placeholder="Your company's phone number">
+      </div>
+      <button
+        class="btn btn-primary--accent">
+        Save
+      </button>
+    </form>
+  </div>
+</div>

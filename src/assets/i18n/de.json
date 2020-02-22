@@ -1,0 +1,39 @@
+{
+  "AUTH": {
+    "login": "Anmelden",
+    "signup": "Registrieren",
+    "logout": "Ausloggen",
+    "LOGIN": {
+      "subtitle": "Willkommen zurück!",
+      "noacc1": "Hast du noch keinen Account?",
+      "noacc2": "Registrieren hier",
+      "forgotpw1": "Passwort vergessen?",
+      "forgotpw2": "Ändere es hier"
+    },
+    "SIGNUP": {
+      "subtitle": "Erstellen eines Konto",
+      "haveacc1": "Hast du schon ein Konto?",
+      "haveacc2": "Hier anmelden",
+      "terms1": "Mit der Anmeldung erklären Sie sich mit unseren",
+      "terms2": "Nutzungsbedingungen",
+      "google": "Diese Seite ist geschützt durch die"
+    },
+    "FORGOTPW": {
+      "subtitle": "Passwort vergessen",
+      "subtitle2": "Geben du deine E-Mail-Adresse ein, um Ihr Passwort zu ändern",
+      "backtologin": "Zurück zur Anmeldeseite",
+      "button": "Passwort ändern"
+    }
+  },
+  "HOME": {
+    "cta": "Kostenlos loslegen"
+  },
+  "SIDEBAR": {
+    "dashboard": "Dashboard",
+    "schedule": "Zeitplan",
+    "tables": "Tabellen",
+    "settings": "Einstellungen",
+    "youracc": "Dein Konto",
+    "help": "Hilfe"
+  }
+}

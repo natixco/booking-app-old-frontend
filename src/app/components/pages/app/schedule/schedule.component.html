@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="inner-container">
+    <div class="header-big">
+      <div>
+        <p class="title">Your schedule</p>
+        <p class="subtitle">Here you can see your time schedule for every day.</p>
+      </div>
+    </div>
+    <div class="calendar-container">
+      <div class="calendar-header">
+        {{namesOfEachMonth[currentMonth]}}/{{currentYear}}
+        <h2 (click)="prevMonth()">Prev month</h2>
+        <h2 (click)="nextMonth()">Next month</h2>
+      </div>
+      <div class="calendar-days">
+        <div class="day">{{dayNames[0]}}</div>
+        <div class="day">{{dayNames[1]}}</div>
+        <div class="day">{{dayNames[2]}}</div>
+        <div class="day">{{dayNames[3]}}</div>
+        <div class="day">{{dayNames[4]}}</div>
+        <div class="day">{{dayNames[5]}}</div>
+        <div class="day">{{dayNames[6]}}</div>
+      </div>
+      <div class="calendar-inner-container">
+        <div class="day" *ngFor="let day of days['dates']">
+          <p class="date">{{day['date']}}</p>
+          <div class="timebar">
+            <div 
+              *ngFor="let item of day['bookings']" 
+              [ngClass]="{'time': !item['off'], 'time-off': item['off']}"
+              [ngStyle]="{'width': item['len']*10 + '%'}">
+            </div>
+          </div>
+          <!-- <p class="bookings" *ngIf="day['bookingCount'] > 0">{{day['bookingCount']}} bookings</p> -->
+          <!-- <p class="bookings" *ngIf="day['bookingCount'] == 0">{{day['bookingCount']}} bookings</p> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

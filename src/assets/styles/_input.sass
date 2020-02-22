@@ -1,0 +1,46 @@
+@import '../_import.sass'
+
+.input-container
+  width: 350px
+  height: auto
+  &:focus-within
+    label
+      color: $accentColor1
+
+  input, select
+    color: $gray
+    border-radius: 4px
+    width: 335px
+    height: 50px
+    margin-bottom: 25px
+    padding-left: 15px
+    font-weight: 400
+    font-size: 16px
+    // background: #F4F4F4
+    background: white !important
+    border: 1px solid rgba(0,0,0,.1)
+    transition: all .4s ease
+    &:hover
+      border-color: rgba(0,0,0,.2)
+    &:focus
+      border-color: $accentColor1
+    &:focus ~ label
+      color: $accentColor1
+
+  select
+    cursor: pointer
+    width: 350px
+
+  label
+    pointer-events: none
+    transition: all .4s ease
+    position: relative
+    // margin-left: 15px
+    margin-right: 15px
+    font-size: 15px
+    margin-bottom: 10px
+    display: inline-block
+    color: $black
+
+  .input-invalid
+    color: $errorColor

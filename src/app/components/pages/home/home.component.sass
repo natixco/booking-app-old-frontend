@@ -1,0 +1,166 @@
+@import '../../../../assets/_import.sass'
+
+.hero
+  width: 100%
+  height: auto
+  padding: 50px 0
+  position: relative
+
+#hero_1
+  padding: 250px 0
+  display: flex
+  flex-direction: column
+  justify-content: center
+  // align-items: center
+  background:
+    image: url('https://images.pexels.com/photos/1813272/pexels-photo-1813272.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')
+    size: cover
+    position: 0 -150px
+  &:after
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    background: rgba($black, .8)
+
+  .info
+    z-index: 99
+    position: relative
+    left: 10%
+
+    h1
+      font-size: 45px
+      color: white
+
+      span
+        color: $accentColor1
+
+    h2
+      font-size: 20px
+      font-weight: 400
+      color: rgba(white, .8)
+      margin-top: 10px
+
+    .btn
+      margin-top: 50px
+
+#hero_2
+  padding: 100px 0
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+
+  h1
+    font-size: 35px
+    color: $black
+
+  p
+    font-size: 20px
+    color: rgba($gray, 1)
+    margin-top: 20px
+    max-width: 40%
+    text-align: center
+
+#hero_4
+  padding: 100px 0
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+
+  ul
+    li
+      position: relative
+      float: left
+      width: 350px
+      list-style: none
+      margin: 0 30px
+
+      h1
+        text-align: center
+        font-size: 20px
+        font-weight: 700
+        color: $accentColor1
+        text-transform: uppercase
+      
+      p
+        text-align: center
+        font-size: 18px
+        color: $gray
+        margin-top: 20px
+
+#footer
+  height: 400px
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  border-top: 1px solid rgba(0,0,0,.1)
+  background: white
+  
+  .info
+    margin-left: 15%
+
+    h1
+      font-size: 30px
+      font-weight: 700
+      color: $accentColor1
+
+    h2
+      font-size: 22px
+      font-weight: 400
+      color: $gray
+
+    p
+      font-size: 16px
+      color: rgba($gray,1)
+      margin-top: 50px
+
+  ul
+    margin-right: 15%
+
+    li
+      position: relative
+      float: left
+      width: 200px
+      display: flex
+      flex-direction: column
+      list-style: none
+
+      h1
+        font-size: 18px
+        color: $gray
+
+      .content
+        margin-top: 25px
+
+        p
+          font-size: 16px
+          margin-bottom: 10px
+          cursor: pointer
+          display: inline-block
+          color: $gray
+          &:hover
+            color: $accentColor1
+
+@media screen and (max-width: 1920px)
+  .container
+
+
+@media screen and (max-width: 1366px)
+  .container
+    
+    #hero_1
+      h1
+        font-size: 35px
+
+    #footer
+      .info
+        margin-left: 5%
+
+      ul
+        margin-right: 5%
+
